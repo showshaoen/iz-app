@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../include/head.ejs')  %>
+
+  <title><%=title  %></title>
+</head>
+
+<body>
+
+  <%- include('../include/navbar.ejs') %>
+  <%- include('../include/modals.ejs') %>
+
+  <div class="container py-3 h-100">
+    <div class="row gy-3 d-flex justify-content-center">
+      <div class="col-lg-8">
+        <div class="card p-3">
+          <form id="createScheduleForm" action="/calendar/create" method="POST" enctype="application/x-www-form-urlencoded">
+
+            <div class="mb-3">
+              <label for="scheduleDate" class="col-form-label">Schedule Date & Time (e.g. 202208131400)</label>
+              <input type="text" class="form-control" name="scheduleDate" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="scheduleName" class="col-form-label">Schedule Name</label>
+              <input type="text" class="form-control" name="scheduleName" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="scheduleDesc" class="col-form-label">Description</label>
+              <input type="text" class="form-control" name="scheduleDesc" required>
+            </div>
+
+            <div class="d-flex justify-content-center">
+              <button type="submit" name="submitBtn" class="btn btn-outline-dark">Submit</button>
+            </div>
+          </form>
+
+          <div class="mt-3 mb-3">
+            <textarea class="form-control" name="content" id="newScheduleTextArea" rows="5" readonly></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <!-- <script type="text/javascript" src="/js/calendar/create.js"></script> -->
+</body>
+
+</html>

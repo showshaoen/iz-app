@@ -1,0 +1,24 @@
+* {
+    font-size: 1em;
+}
+
+html,
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #D9D7F1;
+}
+
+/* Containers */
+
+/* Navigation Bar */
+#navigation_bar {
+    overflow: visible !important;
+    background-color: #0A1931 !important;
+    z-index: 9999;
+    padding-inline: 2%;
+}
