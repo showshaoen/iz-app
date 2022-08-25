@@ -31,7 +31,7 @@ router.get("/getDaily/:type/:date", requiresAuth(), async (req, res) => {
   var data = {};
   data = await common.httpRequest(
     "GET",
-    `${process.env.APIURL}/schedules/getDaily/${req.params.type}/${req.params.date}`,
+    `${process.env.API_URL}/schedules/getDaily/${req.params.type}/${req.params.date}`,
     headers,
     {}
   );
@@ -47,7 +47,7 @@ router.post("/create", requiresAuth(), async (req, res) => {
   var data = {};
   data = await common.httpRequest(
     "GET",
-    `${process.env.APIURL}/schedules/create`,
+    `${process.env.API_URL}/schedules/create`,
     headers,
     req.body
   );
