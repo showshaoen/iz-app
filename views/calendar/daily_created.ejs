@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../include/head.ejs')  %>
+
+  <title><%=title  %></title>
+</head>
+
+<body>
+
+  <%- include('../include/navbar.ejs') %>
+  <%- include('../include/modals.ejs') %>
+
+  <div class="container py-3 h-100">
+    <div class="row gy-3 d-flex justify-content-center">
+      <div class="col-lg-8">
+        <div class="card p-3">
+
+          <div class="mt-3 mb-3">
+            <textarea class="form-control" name="content" id="contentTextArea" rows="8" readonly></textarea>
+          </div>
+
+          <script>
+            let start = "<%=data.start.dateTime%>" || "<%=data.start.date%>";
+            let summary = "<%=data.summary%>"
+            let description = "<%=data.description %>" || "";
+            let link = "<%=data.htmlLink %>";
+            console.log(start)
+            console.log(summary)
+            console.log(description)
+            console.log(link)
+            let builder = "";
+            builder += `📆${start}\n\n`;
+            builder += `🔹${summary}\n\n`;
+            if (description) {
+              builder += `📌${description}\n\n`;
+            }
+            builder += `🔗${link}`;
+
+            $("#contentTextArea").html(builder);
+          </script>
+
+          <div class="d-flex justify-content-center">
+              <button id="backBtn" class="btn btn-warning" style="width:50%;">Back to Create New Schedule</button>
+          </div>
+          <script>
+            $("#backBtn").on("click", () => {
+              window.location.href = "/calendar/create";
+            })
+          </script>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</body>
+
+</html>

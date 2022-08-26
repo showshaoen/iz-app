@@ -51,8 +51,11 @@ router.post("/create", requiresAuth(), async (req, res) => {
     headers,
     req.body
   );
-  console.log({data});
-  return res.status(200).send("https://drab-plum-crayfish-vest.cyclic.app/calendar/create");
+  res.render("calendar/daily_created", {
+    title: "Created Event",
+    isAuthenticated: req.oidc.isAuthenticated(),
+    data: data
+  })
 });
 
 module.exports = router;
