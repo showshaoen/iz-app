@@ -13,6 +13,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
+
   <title>IZ-CAL</title>
 </head>
 
@@ -21,8 +24,30 @@
 
 
   <div class="container py-5 h-100">
+    <div class="row g-3 d-flex">
+
+      <div class="col-md d-flex justify-content-center">
+        <div class="card" >
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <div>
+              Schedule Time: 17/09/2022, 12:50 PM
+            </div>
+            
+            <i class="fa-regular fa-copy clipboard" data-clipboard-target="#copyBody"></i>
+          </div>
+          <div class="card-body " id="copyBody">
+            Text to be copied in html
+        </div>
+      </div>
+
+
+    </div>
+
   </div>
+  <script type="text/javascript" src="/js/index.js"></script>
 
 </body>
+
+
 
 </html>
