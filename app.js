@@ -1,6 +1,8 @@
 const express = require("express");
 const { auth } = require("express-openid-connect");
 
+// New location commit
+
 // App and Socket Initialization
 const app = express();
 
