@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
   <%- include('../include/head.ejs')  %>
 
@@ -29,7 +26,7 @@
 
             <div class="mb-3">
               <label for="date" class="col-form-label">Date (e.g. 20220813)</label>
-              <input type="text" class="form-control" name="date" required>
+              <input type="number" min="0" inputmode="numeric" pattern="[0-9]*" class="form-control" name="date" required>
             </div>
 
             <div class="d-flex justify-content-center">
