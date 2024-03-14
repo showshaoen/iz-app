@@ -32,7 +32,7 @@ router.get("/getDaily/:type/:date", requiresAuth(), async (req, res) => {
   data = await common.httpRequest(
     "GET",
     `${process.env.API_URL}/schedules/getDaily/${req.params.type}/${req.params.date}`,
-    // headers,
+    {},
     {}
   );
   return res.status(200).send(data);
@@ -43,12 +43,14 @@ router.post("/create", requiresAuth(), async (req, res) => {
   // let headers = {
   //   authorization: `${token_type} ${access_token}`,
   // };
+  console.log("here...");
+  console.log(req.body);
 
   var data = {};
   data = await common.httpRequest(
     "GET",
     `${process.env.API_URL}/schedules/create`,
-    // headers,
+    {},
     req.body
   );
   res.render("calendar/daily_created", {
