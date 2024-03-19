@@ -23,39 +23,39 @@ router.get("/create", requiresAuth(), async (req, res) => {
 });
 
 router.get("/getDaily/:type/:date", requiresAuth(), async (req, res) => {
-  const { token_type, access_token } = req.oidc.accessToken;
-  let headers = {
-    authorization: `${token_type} ${access_token}`,
-  };
+  // const { token_type, access_token } = req.oidc.accessToken;
+  // let headers = {
+  //   authorization: `${token_type} ${access_token}`,
+  // };
 
   var data = {};
   data = await common.httpRequest(
     "GET",
     `${process.env.API_URL}/schedules/getDaily/${req.params.type}/${req.params.date}`,
-    headers,
+    {},
     {}
   );
   return res.status(200).send(data);
 });
 
 router.post("/create", requiresAuth(), async (req, res) => {
-  const { token_type, access_token } = req.oidc.accessToken;
-  let headers = {
-    authorization: `${token_type} ${access_token}`,
-  };
+  // const { token_type, access_token } = req.oidc.accessToken;
+  // let headers = {
+  //   authorization: `${token_type} ${access_token}`,
+  // };
 
   var data = {};
   data = await common.httpRequest(
     "GET",
     `${process.env.API_URL}/schedules/create`,
-    headers,
+    {},
     req.body
   );
   res.render("calendar/daily_created", {
     title: "Created Event",
     isAuthenticated: req.oidc.isAuthenticated(),
-    data: data
-  })
+    data: data,
+  });
 });
 
 module.exports = router;
