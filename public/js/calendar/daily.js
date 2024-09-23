@@ -40,6 +40,7 @@ $(document).ready(async () => {
     } else if (type == "reminder") {
       console.log(data.content);
       for (x of data.content) {
+        if (!("scheduleTime" in x)) continue;
         builder += await cardBuilder(x.scheduleTime, x.reminder);
         // builder += x;
       }
@@ -52,8 +53,7 @@ $(document).ready(async () => {
     // Clipboard
     var clipboard = new ClipboardJS(".clipboard", {
       text: function (trigger) {
-        console.log(trigger.previousSibling.innerHTML);
-        return trigger.previousSibling.innerHTML;
+        return trigger.previousSibling.innerText;
       },
     });
 
