@@ -19,7 +19,8 @@
           </div>
 
           <script>
-            let start = "<%=data.start.dateTime%>" || "<%=data.start.date%>";
+            // let start = "<%=data.start.dateTime%>" || "<%=data.start.date%>";
+            let start = "<%=data.formattedDateTime%>";
             let summary = "<%=data.summary%>"
             let description = "<%=data.description %>" || "";
             let link = "<%=data.htmlLink %>";
