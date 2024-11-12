@@ -1,7 +1,0 @@
-services:
-  iz-app:
-    container_name: "iz-app"
-    image: "showshaoen/iz-app"
-    restart: unless-stopped
-    ports:
-      - 3000:3000

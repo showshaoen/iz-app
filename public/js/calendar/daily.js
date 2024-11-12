@@ -21,6 +21,8 @@ $(document).ready(async () => {
       {}
     );
 
+    console.log(`${data}`);
+
     let $body = $("#contentDisplay");
     let builder = "";
 
