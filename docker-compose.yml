@@ -1,0 +1,13 @@
+services:
+  iz-cal-api:
+    container_name: "iz-cal-api"
+    image: "showshaoen/iz-cal-api"
+    restart: unless-stopped
+    ports:
+      - 5000:5000
+  iz-app:
+    container_name: "iz-app"
+    image: "showshaoen/iz-app"
+    restart: unless-stopped
+    ports:
+      - 3000:3000
