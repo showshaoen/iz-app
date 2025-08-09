@@ -40,7 +40,7 @@ $(document).ready(async () => {
         builder += await cardBuilder("Daily Tweet", cardBody);
       }
     } else if (type == "reminder") {
-      console.log(data.content);
+      builder += `<h5 class="text-center mb-3">Reminders: ${data.content.length}</h5>`;
       for (x of data.content) {
         if (!("scheduleTime" in x)) continue;
         builder += await cardBuilder(x.scheduleTime, x.reminder);

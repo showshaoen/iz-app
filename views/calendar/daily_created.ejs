@@ -38,12 +38,16 @@
             $("#contentTextArea").html(builder);
           </script>
 
-          <div class="d-flex justify-content-center">
-              <button id="backBtn" class="btn btn-warning" style="width:50%;">Back to Create New Schedule</button>
+          <div class="d-flex justify-content-center gap-3">
+              <button id="backBtn" class="btn btn-warning">Back to Create New Schedule</button>
+              <button id="dailyBtn" class="btn btn-info">Go to Daily</button>
           </div>
           <script>
             $("#backBtn").on("click", () => {
               window.location.href = "/calendar/create";
+            })
+            $("#dailyBtn").on("click", () => {
+              window.location.href = "/calendar/daily";
             })
           </script>
         </div>
